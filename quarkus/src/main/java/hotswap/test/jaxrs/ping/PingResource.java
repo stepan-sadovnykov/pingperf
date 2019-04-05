@@ -1,20 +1,18 @@
 package hotswap.test.jaxrs.ping;
 
-import io.quarkus.vertx.web.Route;
-import io.vertx.ext.web.RoutingContext;
+import javax.enterprise.context.ApplicationScoped;
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
 
-import javax.inject.Inject;
-
-import static io.vertx.core.http.HttpMethod.GET;
-
+@ApplicationScoped
 public class PingResource {
-
-    @Inject
-    private Statistics statistics;
-
-    @Route(path = "/ping/simple", methods = GET)
-    void getSimple(RoutingContext context) {
-        //statistics.updateStatistic(0);
-        context.response().setStatusCode(200).end();
+    @GET
+    @Produces(MediaType.TEXT_PLAIN)
+    @Path("simple")
+    public Response getSimple() {
+        return Response.ok().build();
     }
 }

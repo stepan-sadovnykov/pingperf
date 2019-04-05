@@ -56,11 +56,11 @@
     <dependencies>
         <dependency>
             <groupId>io.quarkus</groupId>
-            <artifactId>quarkus-vertx</artifactId>
+            <artifactId>quarkus-resteasy</artifactId>
         </dependency>
         <dependency>
             <groupId>io.quarkus</groupId>
-            <artifactId>quarkus-vertx-web</artifactId>
+            <artifactId>quarkus-arc</artifactId>
         </dependency>
 
         <dependency>
@@ -90,8 +90,7 @@
                                     <goal>native-image</goal>
                                 </goals>
                                 <configuration>
-					<enableHttpUrlHandler>true</enableHttpUrlHandler>
-					<!--<uberJar>true</uberJar>-->
+                                    <enableHttpUrlHandler>true</enableHttpUrlHandler>
                                 </configuration>
                             </execution>
                         </executions>
